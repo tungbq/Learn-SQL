@@ -9,3 +9,6 @@ To learn SQL
 `docker compose stop`
 # Stop server and destroy
 `docker compose down`
+
+# Reference:
+### https://www.w3schools.com/sql/default.asp
