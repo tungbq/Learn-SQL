@@ -11,3 +11,8 @@ This table should be called `songs` and have four properties with these exact na
 [Solution](practices/P2.sql)
 
 Change the name of the column the data returns to `Band Name`
+
+### 3. Select the Oldest Album
+[Solution](practices/3.sql)
+
+Make sure to only return one result from this query, and that you are not returning any albums that do not have a release year.
