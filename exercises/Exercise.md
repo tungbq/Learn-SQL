@@ -1,6 +1,6 @@
 ### 1. Create a Songs Table
 
-[Solution](practices/P1.sql)
+[Solution](../practices/P1.sql)
 
 This table should be called `songs` and have four properties with these exact names.
 
@@ -10,7 +10,7 @@ This table should be called `songs` and have four properties with these exact na
 4. `album_id`: An integer that is a foreign key referencing the albums table that cannot be null.
 
 ### 2. Select only the Names of all the Bands
-[Solution](practices/P2.sql)
+[Solution](../practices/P2.sql)
 
 Change the name of the column the data returns to `Band Name`
 
@@ -25,7 +25,7 @@ Change the name of the column the data returns to `Band Name`
 | Dream Theater     | 
 
 ### 3. Select the Oldest Album
-[Solution](practices/P3.sql)
+[Solution](../practices/P3.sql)
 
 Make sure to only return one result from this query, and that you are not returning any albums that do not have a release year.
 
@@ -34,7 +34,7 @@ Make sure to only return one result from this query, and that you are not return
 | 5  | ...And Justice for All | 1988         | 2       | 
 
 ### 4. Get all Bands that have Albums
-[Solution](practices/P4.sql)
+[Solution](../practices/P4.sql)
 
 There are multiple different ways to solve this problem, but they will all involve a join.
 
@@ -50,7 +50,7 @@ Return the band name as `Band Name`.
 | Van Canto         | 
 
 ### 5. Get all Bands that have No Albums
-[Solution](practices/P5.sql)
+[Solution](../practices/P5.sql)
 
 This is very similar to #4 but will require more than just a join.
 
@@ -61,7 +61,7 @@ Return the band name as `Band Name`.
 | Dream Theater | 
 
 ### 6. Get the Longest Album
-[Solution](practices/P6.sql)
+[Solution](../practices/P6.sql)
 
 This problem sounds a lot like #3 but the solution is quite a bit different. I would recommend looking up the SUM aggregate function.
 
@@ -72,24 +72,24 @@ Return the album name as `Name`, the album release year as `Release Year`, and t
 | Death Magnetic | 2008         | 74.76666593551636 | 
 
 ### 7. Update the Release Year of the Album with no Release Year
-[Solution](practices/P7.sql)
+[Solution](../practices/P7.sql)
 
 Set the release year to 1986.
 
 You may run into an error if you try to update the release year by using `release_year IS NULL` in the WHERE statement of your UPDATE. This is because MySQL Workbench by default will not let you update a table that has a primary key without using the primary key in the UPDATE statement. This is a good thing since you almost never want to update rows without using the primary key, so to get around this error make sure to use the primary key of the row you want to update in the WHERE of the UPDATE statement.
 
 ### 8. Insert a record for your favorite Band and one of their Albums
-[Solution](practices/P8.sql)
+[Solution](../practices/P8.sql)
 
 If you performed this correctly you should be able to now see that band and album in your tables.
 
 ### 9. Delete the Band and Album you added in #8
-[Solution](practices/P9.sql)
+[Solution](../practices/P9.sql)
 
 The order of how you delete the records is important since album has a foreign key to band.
 
 ### 10. Get the Average Length of all Songs
-[Solution](practices/P10.sql)
+[Solution](../practices/P10.sql)
 
 Return the average length as `Average Song Duration`.
 
@@ -99,7 +99,7 @@ Return the average length as `Average Song Duration`.
 
 
 ### 11. Select the longest Song off each Album
-[Solution](practices/P11.sql)
+[Solution](../practices/P11.sql)
 
 Return the album name as `Album`, the album release year as `Release Year`, and the longest song length as `Duration`.
 
@@ -125,7 +125,7 @@ Return the album name as `Album`, the album release year as `Release Year`, and 
 | Tribe of Force              | 2010         | 8.38333  | 
 
 ### 12. Get the number of Songs for each Band
-[Solution](practices/P12.sql)
+[Solution](../practices/P12.sql)
 
 This is one of the toughest question on the list. It will require you to chain together two joins instead of just one.
 
