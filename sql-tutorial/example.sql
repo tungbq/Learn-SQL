@@ -31,11 +31,27 @@ CREATE TABLE student (
   major VARCHAR(40) DEFAULT 'undecided',
   PRIMARY KEY (student_id)
 );
-INSERT INTO student
-VALUES(5, "aaaa", 'Biology');
+INSERT INTO student(name, major)
+VALUES("aaaa", 'Biology');
 INSERT INTO student(student_id, name)
 VALUES(1, "Leo");
 INSERT INTO student(name)
 VALUES(1, "Neymar");
-
 -- Update and delete
+SELECT *
+FROM student;
+UPDATE student
+SET major = 'Bio'
+WHERE major = 'Biology';
+UPDATE student
+SET major = 'undecided-1'
+WHERE student_id = 2;
+UPDATE student
+SET name = 'Cong Phuong',
+  major = 'Football'
+WHERE student_id = 3;
+-- delete
+DELETE FROM student
+WHERE student_id = 3;
+
+DELETE FROM student;
