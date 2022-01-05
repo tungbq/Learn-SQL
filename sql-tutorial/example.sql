@@ -23,4 +23,19 @@ VALUES(5, 'Mike', 'Computer Science');
 -- show all rows in table
 SELECT *
 FROM student;
+-- constrains
+DROP TABLE student;
+CREATE TABLE student (
+  student_id INT AUTO_INCREMENT,
+  name VARCHAR(40) NOT NULL,
+  major VARCHAR(40) DEFAULT 'undecided',
+  PRIMARY KEY (student_id)
+);
+INSERT INTO student
+VALUES(5, "aaaa", 'Biology');
+INSERT INTO student(student_id, name)
+VALUES(1, "Leo");
+INSERT INTO student(name)
+VALUES(1, "Neymar");
 
+-- Update and delete
