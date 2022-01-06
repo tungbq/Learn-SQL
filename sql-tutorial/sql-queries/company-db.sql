@@ -349,3 +349,29 @@ SELECT branch.branch_name,
   employee.first_name
 FROM employee
   FULL JOIN branch ON employee.emp_id = branch.mgr_id;
+-------nested queries------------
+-- Find names of all employees who have sold over 50,000
+SELECT employee.first_name,
+  employee.last_name
+FROM employee
+WHERE employee.emp_id IN (
+    SELECT works_with.emp_id
+    FROM works_with
+    WHERE works_with.total_sales > 50000
+  );
+-- Find all clientst who are handles by he branch that Michael Scott manages
+-- Assume you DONT'T know Michael's ID
+SELECT *
+FROM client
+WHERE client.branch_id = (
+    SELECT branch.branch_id
+    FROM branch
+    WHERE branch.mgr_id = (
+        SELECT employee.emp_id
+        FROM employee
+        WHERE employee.first_name = 'Michael'
+          AND employee.last_name = 'Scott'
+        LIMIT 1
+      )
+  );
+-- Find the names of all clients who have spent more than 100,000 dollars
