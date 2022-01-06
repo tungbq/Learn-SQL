@@ -281,7 +281,9 @@ SELECT client_id,
   SUM(total_sales) AS total_sales
 FROM works_with
 GROUP BY client_id;
-----Wildcards
+---------------------
+------Wildcards------
+---------------------
 -- % = any # characters, _ = one character
 -- find clients who are in LLC
 SELECT *
@@ -296,4 +298,27 @@ SELECT *
 FROM employee
 WHERE birth_day LIKE '%____-10-__%';
 -- Find any clients who are schools
-SELECT * FROM client WHERE client_name LIKE '%Highschool';
+SELECT *
+FROM client
+WHERE client_name LIKE '%Highschool';
+-----------------
+------UNION------
+-----------------
+-- Find a list of employee and branch names
+SELECT first_name AS Company_Names
+FROM employee
+UNION
+SELECT branch_name
+FROM branch
+UNION
+SELECT client_name
+FROM client;
+--- rule1: same col num
+--- rule2: similar data type
+-- Find a list of all clients & branch suppliers' names
+SELECT client_name
+FROM client
+UNION
+SELECT supplier_name
+FROM branch_supplier;
+-- Find a list of all money spent or earned by the company
