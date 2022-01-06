@@ -321,4 +321,31 @@ FROM client
 UNION
 SELECT supplier_name
 FROM branch_supplier;
--- Find a list of all money spent or earned by the company
+--------JOIN------------
+-- Find all the branch and the name of their managers
+INSERT INTO branch
+VALUES(4, "Buffalo", NULL, NULL);
+-- inner join
+SELECT branch.branch_name,
+  employee.emp_id,
+  employee.first_name
+FROM employee
+  JOIN branch ON employee.emp_id = branch.mgr_id;
+-- left join
+SELECT branch.branch_name,
+  employee.emp_id,
+  employee.first_name
+FROM employee
+  LEFT JOIN branch ON employee.emp_id = branch.mgr_id;
+-- right join
+SELECT branch.branch_name,
+  employee.emp_id,
+  employee.first_name
+FROM employee
+  RIGHT JOIN branch ON employee.emp_id = branch.mgr_id;
+-- full join
+SELECT branch.branch_name,
+  employee.emp_id,
+  employee.first_name
+FROM employee
+  FULL JOIN branch ON employee.emp_id = branch.mgr_id;
