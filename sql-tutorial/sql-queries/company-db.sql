@@ -375,3 +375,12 @@ WHERE client.branch_id = (
       )
   );
 -- Find the names of all clients who have spent more than 100,000 dollars
+--------------DELETE-----------------
+DELETE FROM employee
+WHERE employee.emp_id = 102;
+--
+--- primary key cannot be NULL so we use 'ON DELETE CASCADE' to delete it when branch_id is deleted.
+DELETE FROM branch
+WHERE branch.branch_id = 2;
+SELECT *
+FROM branch_supplier;
